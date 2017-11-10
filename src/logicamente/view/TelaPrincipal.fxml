@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpaneTelaPricipal" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #666;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logicamente.controller.TelaPrincipalController">
+    <stylesheets>
+        <URL value="@telaprincipal.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.10445682451253482" layoutX="206.0" layoutY="62.0" orientation="VERTICAL" prefHeight="480.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxHeight="60.0" minHeight="0.0" minWidth="0.0" prefHeight="60.0" prefWidth="718.0" style="-fx-background-color: #404040;">
+               <children>
+                  <Button id="btnVisaoGeral" fx:id="btnVisaoGeral" layoutX="537.0" layoutY="-2.0" mnemonicParsing="false" onAction="#btnVisaoGeral" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Visão Geral" textFill="#00b35a">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button id="btnRelatorios" fx:id="btnRelatorios" layoutX="696.0" mnemonicParsing="false" onAction="#btnRelatorios" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: tranparent;" styleClass="btnRelatorios" text="Relatorios" textFill="#00b35a">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button id="btnRelatorios" fx:id="btnSair" layoutX="1190.0" layoutY="12.0" mnemonicParsing="false" onAction="#btnSair" prefHeight="36.0" prefWidth="34.0" styleClass="btnSair" stylesheets="@telaprincipal.css" textFill="#00b35a">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="112.0" layoutY="16.0" text="Olá! Bem Vindo(a) " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="labelNomeUsuario" layoutX="285.0" layoutY="16.0" text="Usuário" textFill="#e6e600">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+                  <Button id="btnAjuda" fx:id="btnAjuda" layoutX="853.0" mnemonicParsing="false" onAction="#btnAjuda" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: transparent;" styleClass="btnAjuda" text="Ajuda" textFill="#00b35a">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="47.0" fitWidth="94.0" layoutX="21.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="anchorpanePricipal" minHeight="0.0" minWidth="0.0" prefHeight="440.0" prefWidth="718.0" style="-fx-background-color: #f6f6f6; -fx-border-radius: 0px;;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

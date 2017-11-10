@@ -1,0 +1,14 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.btnSair{
+    -fx-background-image: url(logout.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    
+}

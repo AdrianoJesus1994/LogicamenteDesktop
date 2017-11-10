@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logicamente.controller.VisaoGeralController">
+    <stylesheets>
+        <URL value="@visaogeral.css" />
+    </stylesheets>
+   <children>
+      <TitledPane layoutX="34.0" layoutY="8.0" prefHeight="316.0" prefWidth="602.0">
+         <content>
+            <PieChart fx:id="pieChartGenero" labelLineLength="25.0" legendVisible="false" prefHeight="280.0" prefWidth="400.0" title="Jogadores por Sexo" />
+         </content>
+      </TitledPane>
+      <TitledPane layoutX="649.0" layoutY="6.0" prefHeight="643.0" prefWidth="593.0">
+         <content>
+            <PieChart fx:id="pieChartFaixaEtaria" labelLineLength="25.0" legendVisible="false" prefHeight="290.0" prefWidth="591.0" title="Faixa Etária" />
+         </content>
+      </TitledPane>
+      <TitledPane layoutX="34.0" layoutY="335.0" prefHeight="316.0" prefWidth="602.0">
+         <content>
+            <PieChart fx:id="pieChartResultadoIdeal" labelLineLength="25.0" legendVisible="false" prefHeight="260.0" prefWidth="600.0" title="Resultado Ideal" />
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
