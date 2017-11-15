@@ -5,6 +5,7 @@
  */
 package logicamente;
 
+import com.itextpdf.text.Image;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,6 +21,7 @@ public class Logicamente extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+       
         AplicationUtil.getInstancia().setTelaAtual(stage);
         AplicationUtil.getInstancia().irParaTela("Login.fxml");
 //        Parent root = FXMLLoader.load(getClass().getResource("view/Login.fxml"));

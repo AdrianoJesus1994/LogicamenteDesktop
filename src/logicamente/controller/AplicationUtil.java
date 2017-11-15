@@ -1,11 +1,15 @@
 package logicamente.controller;
 
+import com.itextpdf.text.Image;
+import java.awt.Toolkit;
 import java.io.IOException;
+import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import javax.swing.ImageIcon;
 import logicamente.dto.UsuarioDto;
 
 /**
@@ -32,12 +36,13 @@ public class AplicationUtil {
 
     public void irParaTela(String nomeTela) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/logicamente/view/".concat(nomeTela)));
+            Parent root = FXMLLoader.load(getClass().getResource("/logicamente/view/".concat(nomeTela)));            
             Scene scene = new Scene(root);
             this.telaAtual.setScene(scene);
             this.telaAtual.setResizable(false);
+            this.telaAtual.getIcons().add(new javafx.scene.image.Image("/logicamente/view/icon.png"));
             if (!this.telaAtual.isShowing()) {
-                this.telaAtual.show();
+                this.telaAtual.show(); 
             }
         } catch (IOException ex) {
             System.err.println("Ocorreu um erro ao tentar navegar para tela " + nomeTela + ": " + ex.getMessage());

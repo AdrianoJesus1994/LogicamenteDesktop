@@ -17,7 +17,7 @@
    <children>
       <Accordion layoutX="273.0" layoutY="139.0" prefHeight="408.0" prefWidth="1080.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="139.0">
         <panes>
-            <TitledPane id="AcordionoQueE" animated="false" style="-fx-background-color: #f6f6f6;" text="O que é?">
+            <TitledPane id="AcordionoQueE" animated="false" text="O que é?">
                <font>
                   <Font size="13.0" />
                </font>
