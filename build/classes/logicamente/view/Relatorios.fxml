@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logicamente.controller.RelatoriosController">
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logicamente.controller.RelatoriosController">
     <stylesheets>
         <URL value="@relatorios.css" />
     </stylesheets>
@@ -23,33 +23,31 @@
             </font>
         </Label>
         
-        <TitledPane animated="false" collapsible="false" layoutX="65.0" layoutY="76.0" prefHeight="158.0" prefWidth="440.0" text="Relatorio de Partidas">
+        <TitledPane animated="false" collapsible="false" layoutX="65.0" layoutY="76.0" prefHeight="121.0" prefWidth="440.0" text="Relatorio Geral de Partidas">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="438.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="82.0" prefWidth="438.0">
                     <children>
                         <Label layoutX="14.0" layoutY="12.0" text="Data Referência" />
-                        <DatePicker fx:id="dpDataReferencia" layoutX="14.0" layoutY="29.0" prefHeight="40.0" prefWidth="200.0" />
+                        <DatePicker fx:id="dpDataReferencia" layoutX="14.0" layoutY="29.0" prefHeight="33.0" prefWidth="200.0" />
                   
-                        <Button layoutX="219.0" layoutY="29.0" mnemonicParsing="false" onAction="#GerarPdf" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #00cd00;" text="Gerar PDF" textFill="WHITE">
+                        <Button layoutX="219.0" layoutY="29.0" mnemonicParsing="false" onAction="#GerarPdf" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #5cb85c;" text="Gerar PDF" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Button>
-                        <Label layoutX="14.0" layoutY="72.0" text="Dificuldade" />
-                        <ComboBox layoutX="14.0" layoutY="89.0" prefHeight="25.0" prefWidth="175.0" />
                     </children>
                 </AnchorPane>
             </content>
         </TitledPane>
         
-        <TitledPane animated="false" collapsible="false" layoutX="634.0" layoutY="76.0" prefHeight="158.0" prefWidth="440.0" text="Relatorio de Jogadores">
+        <TitledPane animated="false" collapsible="false" layoutX="634.0" layoutY="76.0" prefHeight="121.0" prefWidth="440.0" text="Relatorio Geral de Jogadores">
             <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="438.0">
                     <children>
-                        <Button id="labelRelatorioJogadores" fx:id="btnRelatorioJogadores" layoutX="199.0" layoutY="46.0" mnemonicParsing="false" onAction="#GerarRelatorioJogadores" prefHeight="40.0" style="-fx-background-color: #00cd00;" styleClass="labelRelatorioJogadores" text="Gerar PDF Completo" textFill="WHITE">
+                        <Button id="labelRelatorioJogadores" fx:id="btnRelatorioJogadores" layoutX="191.0" layoutY="29.0" mnemonicParsing="false" onAction="#GerarRelatorioJogadores" prefHeight="33.0" style="-fx-background-color: #5cb85c;" styleClass="labelRelatorioJogadores" text="Gerar PDF Completo" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Button>
-                  <Label layoutX="29.0" layoutY="58.0" text="Dados sobre os jogadores:">
+                  <Label layoutX="21.0" layoutY="38.0" text="Dados sobre os jogadores:">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -58,6 +56,57 @@
                 </AnchorPane>
             </content>
         </TitledPane>
+      <TableView fx:id="tabelaJogadores" layoutX="65.0" layoutY="249.0" prefHeight="344.0" prefWidth="440.0">
+        <columns>
+          <TableColumn fx:id="colunaNome" prefWidth="305.0" text="Nome" />
+          <TableColumn fx:id="colunaNascimento" prefWidth="134.0" text="Nascimento" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="634.0" layoutY="319.0" prefHeight="178.0" prefWidth="440.0" style="-fx-background-color: #e6e6e6;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="196.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="302.0" minWidth="10.0" prefWidth="244.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="  NOME:" textFill="#333333">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="  NASCIMENTO:" textFill="#333333" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="  SEXO:" textFill="#333333" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="labelNomeJogador" prefHeight="17.0" prefWidth="291.0" GridPane.columnIndex="1" />
+            <Label fx:id="labelNascJogador" prefHeight="17.0" prefWidth="338.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="labelSexoJogador" prefHeight="17.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="  IDADE:" textFill="#333333" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelIdadeJogador" prefHeight="17.0" prefWidth="244.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnHistoricoJogador" layoutX="813.0" layoutY="534.0" mnemonicParsing="false" onAction="#gerarHistorico" prefHeight="33.0" prefWidth="83.0" style="-fx-background-color: #5cb85c;" text="Histórico" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="634.0" layoutY="271.0" text="Informações do jogador selecionado." textFill="#5cb85c">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
       
     </children>
 </AnchorPane>

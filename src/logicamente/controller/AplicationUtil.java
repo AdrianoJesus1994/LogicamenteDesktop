@@ -1,15 +1,12 @@
 package logicamente.controller;
 
-import com.itextpdf.text.Image;
-import java.awt.Toolkit;
 import java.io.IOException;
-import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import javax.swing.ImageIcon;
+import logicamente.dto.JogadoresDto;
 import logicamente.dto.UsuarioDto;
 
 /**
@@ -22,6 +19,8 @@ public class AplicationUtil {
 
     private Stage telaAtual = null;
     private UsuarioDto usuarioLogado = null;
+    private JogadoresDto jogadorAtual = null;
+    
 
     private AplicationUtil() {
         this.telaAtual = new Stage();
@@ -39,7 +38,7 @@ public class AplicationUtil {
             Parent root = FXMLLoader.load(getClass().getResource("/logicamente/view/".concat(nomeTela)));            
             Scene scene = new Scene(root);
             this.telaAtual.setScene(scene);
-            this.telaAtual.setResizable(false);
+            this.telaAtual.setResizable(true);
             this.telaAtual.getIcons().add(new javafx.scene.image.Image("/logicamente/view/icon.png"));
             if (!this.telaAtual.isShowing()) {
                 this.telaAtual.show(); 
@@ -69,6 +68,14 @@ public class AplicationUtil {
         this.usuarioLogado = null;
     }
     
+    public JogadoresDto getJogadorAtual() {
+        return jogadorAtual;
+    }
+
+    public void setJogadorAtual(JogadoresDto jogadorAtual) {
+        this.jogadorAtual = jogadorAtual;
+    }
+
     public static void ExibirAviso(String titulo, String mensagem){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);

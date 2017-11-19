@@ -31,8 +31,6 @@
         <Button fx:id="btnLogin" layoutX="82.0" layoutY="355.0" mnemonicParsing="false" onAction="#realizarLogin" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #f6f6f6;" text="Login" />
         <Button fx:id="btnCadatrar" layoutX="82.0" layoutY="397.0" mnemonicParsing="false" onAction="#realizarCadastro" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #f6f6f6;" text="Cadastre-se" />
        
-        <Hyperlink layoutX="277.0" layoutY="563.0" text="Ajuda?" />
-       
         <Label fx:id="labelStatus" layoutX="83.0" layoutY="433.0" prefHeight="38.0" prefWidth="200.0" textAlignment="CENTER" textFill="#f21919">
             <font>
                 <Font name="System Bold" size="12.0" />

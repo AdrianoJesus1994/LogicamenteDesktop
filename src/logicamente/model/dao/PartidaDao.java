@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
+import logicamente.dto.JogadoresDto;
 import logicamente.dto.PartidaDto;
 import logicamente.model.DaoUtil;
 
@@ -16,6 +17,25 @@ public class PartidaDao extends DaoUtil {
 
     public List<PartidaDto> recuperaPartida() {
         String sql = "SELECT id, dt_jogo, tipo_dificuldade, num_movimentos, tempo_jogo, id_jogador FROM Partida";
+
+        List<PartidaDto> partidas = new LinkedList<PartidaDto>();
+        try {
+            ResultSet retorno = super.getStatement().executeQuery(sql);
+            while (retorno.next()) {
+                partidas.add(new PartidaDto(retorno.getInt("id"), retorno.getDate("dt_jogo"), retorno.getInt("tipo_dificuldade"), retorno.getInt("num_movimentos"), retorno.getTime("tempo_jogo"), retorno.getInt("id_jogador")));
+            }
+
+            retorno.close();
+            super.destroyConnection();
+        } catch (SQLException e) {
+            System.out.println("Erro de Consulta" + e);
+        }
+
+        return partidas;
+    }
+    
+     public List<PartidaDto> recuperaPartidaPorJogador(int id) {
+        String sql = "SELECT id, dt_jogo, tipo_dificuldade, num_movimentos, tempo_jogo, id_jogador FROM Partida WHERE id_jogador = '" + id + "'";
 
         List<PartidaDto> partidas = new LinkedList<PartidaDto>();
         try {
@@ -61,14 +81,14 @@ public class PartidaDao extends DaoUtil {
         return partidas;
     }
 
-    public List<PartidaDto> recuperaPartidaJogador(PartidaDto idjogador) {
+    public List<PartidaDto> recuperaPartidaJogador(JogadoresDto idjogador) {
         String sql = "SELECT * FROM Partida WHERE id_jogador = ?";
 
         List<PartidaDto> partidas = new LinkedList<PartidaDto>();
 
         try {
             PreparedStatement pst = super.getPreparedStatement(sql);
-            pst.setInt(1, idjogador.getId_jogador());
+            pst.setInt(1, idjogador.getId());
             ResultSet retorno = super.getStatement().executeQuery(sql);
             while (retorno.next()) {
                 partidas.add(new PartidaDto(retorno.getInt("id"), retorno.getDate("dt_jogo"), retorno.getInt("tipo_dificuldade"), retorno.getInt("num_movimentos"), retorno.getTime("tempo_jogo"), retorno.getInt("id_jogador")));

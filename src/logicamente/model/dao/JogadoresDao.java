@@ -18,7 +18,7 @@ import logicamente.model.DaoUtil;
 public class JogadoresDao extends DaoUtil{
     
    public List<JogadoresDto> recuperaJogador(){
-        String sql = "SELECT id, dt_anoNascimento, nome, sexo FROM Jogador";
+        String sql = "SELECT id, dt_anoNascimento, nome, sexo FROM Jogador ORDER BY nome";
         List <JogadoresDto> lstret = new LinkedList<JogadoresDto>();
         try {
             ResultSet rs = super.getStatement().executeQuery(sql);
